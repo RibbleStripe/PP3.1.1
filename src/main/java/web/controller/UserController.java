@@ -20,7 +20,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String allUsers(Model model) {
         model.addAttribute("user", userService.getAllUsers());
         return "/index";
@@ -34,7 +34,7 @@ public class UserController {
     @PostMapping("/createUser")
     public String createUser(@ModelAttribute User user) {
         userService.createUser(user);
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @GetMapping("/update/{id}")
